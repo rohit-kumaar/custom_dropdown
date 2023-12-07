@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary Details Test - Dropdown</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        width: 100vw;
+        height: 100dvh;
+      }
+
+      details {
+        position: relative;
+      }
+
+      details[open]::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        /* background: #000; */
+      }
+
+      summary {
+        padding: 5px 20px;
+        background: lightseagreen;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      section {
+        position: relative;
+      }
+
+      div {
+        position: absolute;
+        top: 6px;
+        width: 400px;
+        aspect-ratio: 1 / 0.3;
+        background: #f6f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <details>
+      <summary>Years</summary>
+
+      <section>
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
+          possimus suscipit mollitia animi minus molestias quos vel accusamus
+          placeat beatae optio dolor, nam amet aliquam voluptates dolores
+          pariatur! Sunt, accusamus.
+        </div>
+      </section>
+    </details>
+
+    <script>
+      const details = document.querySelector("details");
+      details.addEventListener("click", (e) => {
+        if (details.hasAttribute("open")) {
+          details.removeAttribute("open");
+        }
+      });
+    </script>
+  </body>
+</html>
